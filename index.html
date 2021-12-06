@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″ />
+    <title>Document</title>
+
+     <!-- Bootstap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+     <!-- Optional theme -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+ 
+     <!-- Jquery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ 
+     <!-- FontAwesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    * {
+        -webkit-locale: auto;
+        white-space: normal;
+      }
+    @font-face {
+        src: url('fonts/Gobold\ Lowplus.otf'),
+        url('fonts/Gobold\ Lowplus.woff') format('woff');
+        font-family: gobold-lowplus;
+    }
+    @font-face {
+        src: url('fonts/Gobold\ Light.otf'),
+        url('fonts/Gobold\ Light.woff') format('woff');
+        font-family: gobold-light;
+    }
+    *{
+        font-family: gobold-lowplus;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover, a:focus {
+        color: white;
+     }
+    .button_hero{
+        font-size: 18px;
+        font-weight: 300;
+        color:white;
+        background-color: #EA5D0A;
+        padding: 20px 30px;
+        padding-top: 20px;
+        text-transform: uppercase;
+        display: inline-block;
+        cursor: pointer;
+        letter-spacing: 3px;
+    }
+
+    /* HEADER */
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        max-width: 1900px;
+        padding: 0px 70px;
+    }
+    .menu{
+        display: flex;
+        justify-content: end;
+        font-size: 20px;
+        color:black;
+        font-family: "gobold_lowplus";
+    }
+    .menu>span{
+        /*padding: 0px 40px;*/
+       
+    }
+    .menu_item{
+        cursor: pointer;
+        margin: 0px 40px;
+    }
+
+    /* SECTIONS */
+    .section{
+        /*border-bottom: .5px solid grey;
+        max-width: 1600px;
+        margin: auto;*/
+    }
+
+    /* VALUES SECTION */
+    .value_section_wrapper{
+        background-color:#EA5D0A;
+    }
+    .value_section{
+        padding-top: 130px;
+        /*margin-bottom: 100px;*/
+        color: white;
+        text-align: center;
+        font-size: 16px;
+    }
+    .value_title{
+        text-transform: uppercase;
+        font-size: 45px;
+        font-weight: 500;
+    }
+    .value_items{
+        margin-top: 100px;
+        padding: 0px 100px;
+        padding-bottom: 160px;
+        justify-content: space-between;
+        display: flex;
+    }
+    .item_title{
+        text-align: center;
+        font-size: 45px;
+        margin-bottom: 60px;
+    }
+    .item_detail{
+        display: flex;
+        flex-direction: column;
+        font-size: 20px
+    }
+    .center_item{
+        margin: 0px 200px;
+    }
+
+    /* VIDEO SECTION */
+    #new_hero_section{
+        max-width: 1650px;margin:auto;padding: 0px 100px;
+    }
+    .video_section{
+        margin: 200px 0px;
+        margin-bottom: 150px;
+        display: flex;
+        align-items: center;
+    }
+
+    .rigth_side,.left_side{
+        flex: 1;
+    }
+    .rigth_side{
+        font-size: 40px;
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        line-height: 1.3;
+    }
+    .button_video{
+        margin-top: 50px;
+    }
+    .button_hero_video{
+        margin-top: 50px;
+        font-size: 18px;
+        font-weight: 300;
+        color: white;
+        background-color: white;
+        padding: 15px 30px;
+        padding-top: 15px;
+        padding-top: 18px;
+        text-transform: uppercase;
+        display: inline-block;
+        cursor: pointer;
+        letter-spacing: 3px;
+
+        border: 2px solid #EA5D0A;
+        color: #EA5D0A;
+        margin: 0px 10px;
+    }
+    .box-video{
+        margin:auto;
+        margin-right: 0px;
+    }
+
+    /* FORM SECTION */
+    .form_section{
+        font-size: 35px;
+        color: gray;
+        text-transform: uppercase;
+        display: flex;
+        justify-content:space-around;
+        margin-top: 200px;
+        margin-bottom: 300px;
+    }
+    .left_side_form{
+        display: flex;
+        flex-direction: column;
+        font-weight: 300;
+    }
+    .form_typeform{
+        /*width: 800px;
+        height: 300px;
+        border: 1px solid gray;*/
+        text-align: center;
+        margin: auto;
+        margin-bottom: 200px;
+    }
+    #form{
+        width:100%;height:1000px; margin-top:-100px;padding:0px 100px;padding-top:100px;margin-bottom: 20px;
+    }
+
+    /* SLIDE */
+    .scroll_section{
+        margin-top: 200px;
+        margin-left: 50px;
+    }
+    .scroll_menu{
+        margin-bottom: 50px;
+    }
+    .title_item{
+        display: flex;
+        flex-direction: column;
+        font-size: 50px;
+        /* line-height: 1.1; */
+        color: gray;
+        /*text-transform: uppercase;*/
+        font-weight: 300;
+        margin-bottom: 0px;
+        letter-spacing: 5px;
+        color: white;
+    }
+    .sub_title_item{
+        display: flex;
+        flex-direction: column;
+        color:black;
+        font-size: 20px;
+        line-height: 1.8;
+        margin-top: 10px;
+    }
+    
+    .scroll_menu{
+        text-align: center;
+    }
+    .slides{
+        position: relative;
+        display: grid;
+        margin-top:130px
+    }
+    .slide{
+        /*text-align: center;*/
+        padding:0px 100px;
+        padding-top: 220px;
+        padding-bottom: 120px;
+        color:white;
+        background-size: cover;
+        background-image: no-repeat;
+        background-image: fixed;
+        background-image: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 690px;
+        position: relative;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        transition: opacity 1s;
+    }
+    .s1{
+        background-image: url(banner_web_01.png);
+        opacity: 1;
+        background-position: center;
+    }
+    .s2{
+        background-image: url(banner_web_02.png);
+        opacity: 0;
+        background-position: center;
+    }
+    .s3{
+        background-image: url(banner_web_03.png);
+        opacity: 0;
+        background-position: center; 
+    }
+    .s4{
+        background-image: url(banner_web_04.png);
+        opacity: 0;
+        background-position: center;
+    }
+    .secondary_subt_title{
+        margin-left: 0px;
+    }
+    .button_section{
+        /*margin-top: 50px;*/
+        font-size: 18px;
+        font-weight: 300;
+        color:white;
+        background-color: white;
+        padding: 15px 30px;
+        padding-top: 18px;
+        text-transform: uppercase;
+        display: inline-block;
+        cursor: pointer;
+        letter-spacing: 3px;
+        /*position: absolute;
+        bottom: 100px;*/
+        border: 2px solid #EA5D0A;
+        color: #EA5D0A;
+
+        margin:0px 10px;
+    }
+    .button_section>img{
+        width: 26px;
+    }
+    .btn_complement{
+        width: 45px;
+    }
+    .new_btn{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: absolute;
+        bottom: 100px;
+    }
+    .slide_menu{
+        position: absolute;
+        bottom: 50px;
+        left:0px;
+        right:0px;
+        text-align: center;
+    }
+    .slide_menu_old{
+        margin-top: 100px;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .slide_menu>label{
+        margin: 0px 5px;
+        padding: 5px 5px;
+        border: 1px solid gray;
+        border-radius: 20px;
+        background-color: white;
+        cursor: pointer;
+    }
+    .secondary_slide{
+        font-size: 45px;
+    }
+
+    .word_color{
+        padding: 0px 10px;
+        padding-top: 3px;
+    }
+
+    /* COLORS */
+    .color_a{
+        background-color: #EA5D0A;
+    }
+    .color_b{
+        background-color: #006CB7;
+    }
+    .color_c{
+        background-color: #3399CC;
+    }
+    .color_d{
+        background-color: #CC3366;
+    }
+
+    /* FOOTER */
+    .footer{
+        margin:auto;
+        padding: 30px 60px;
+        max-width: 1900px;
+        background-color: black;
+        color:white;
+        font-family: goldbol-light !important;
+    }
+    .footer_wrapper{
+        background-color: black;
+    }
+    .footer_left_side{
+        font-weight: bold;
+    }
+    .footer_header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+    }
+    .footer_right_side>i{
+        font-size: 25px;
+    }
+    .footer_center{
+        font-family: gobold-light !important ;
+    }
+    .slide_text{
+        max-width: 1650px;
+        margin: auto;
+    }
+    .slide_responsive{
+        display: none;
+    }
+    .slide_desktop{
+        display: block;
+    }
+    .video_text{
+        padding-right: 20px;
+    }
+    .finalist{
+        width: 350px;
+        height: 550px;
+        border: 1px solid black;
+    }
+
+        /* responsive mobile */
+    @media screen and (max-width: 480px) {
+        .header{
+            padding: 0px 13px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .slides{
+            margin-top: 70px;
+        }
+        .menu_first{
+            display: none;
+        }
+        .logo>img{
+            width: 90px;
+        }
+        .menu{
+            font-size: 7px;
+            flex-direction: row;
+        }
+        .menu_item{
+            margin: 0px 0px;
+        }
+        .menu>span{
+            padding: 3px 0px;
+        }
+        #value_hero{
+            padding-right: 3px;
+        }
+        #new_hero{
+            padding-right: 3px;
+        }
+        .form_hero{
+            padding-left: 3px;
+        }
+        #menu_value_hero{
+            /*border: 1px solid #EA5D0A;*/
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        #menu_new_hero{
+             /*border-bottom: 1px solid #EA5D0A;
+            border-left: 1px solid #EA5D0A;
+            border-right: 1px solid #EA5D0A;*/
+            cursor: pointer;
+        }
+        #menu_form_hero{
+             /*border-bottom: 1px solid #EA5D0A;
+            border-left: 1px solid #EA5D0A;
+            border-right: 1px solid #EA5D0A;*/
+            cursor: pointer;
+        }
+        .separator_menu{
+            /*display: none;*/
+        }
+        .slide{
+            height: 600px;
+            padding: 280px 20px;
+        }
+        .title_item{
+            font-size: 22px;
+        }
+        .sub_title_item{
+            font-size: 15px;
+        }
+        .button_section{
+            font-size: 12px;
+            padding: 14px 15px;
+            bottom: 95px;
+        }
+        .btn_complement{
+            width: 25px;
+        }
+        .new_btn{
+            bottom: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            justify-content: center;
+        }
+        .s1{
+            background-position: -850px 0px;
+        }
+        .s2{
+            background-position: -1000px ;
+        }
+        .s3{
+            background-position: -1000px ;
+        }
+        .s4>.slide_text>.secondary_slide{
+            font-size: 20px;
+        }
+        .s4{
+            background-position: -1000px ;
+        }
+        .value_section{
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .value_title{
+            font-size: 35px;
+            padding: 0px 5px;
+        }
+        .value_items{
+            margin-top:50px;
+            flex-direction: column;
+            padding: 0px 20px;
+        }
+        .value_item{
+            margin-bottom: 20px
+        }
+        .item_title{
+            margin-bottom: 10px;
+            font-size: 35px;
+        }
+        .item_detail{
+            font-size: 15px;
+        }
+        .center_item{
+            margin: 0px;
+            margin-bottom: 20px;
+        }
+
+        #new_hero_section{
+            padding: 0px 20px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        .video_section{
+            margin: 0px 0px;
+            flex-direction: column-reverse;
+        }
+        .video_frame>iframe{
+            width:350px;
+            height:185px
+        }
+        .rigth_side{
+            margin-top: 50px;
+        }
+        .video_text{
+            font-size: 28px;
+            text-align: center;
+            padding: 0px 0px;
+        }
+        .button_video{
+            text-align: center;
+            margin-top: 100px;
+        }
+        #form{
+            background-color: #F1F2F2;
+            /*height: 600px;*/
+            padding: 0px 20px;
+            margin-top: 0px;
+        }
+        .footer{
+            padding: 10px 20px;
+        }
+        .footer_header{
+            font-size: 10px;
+        }
+        .footer_left_side>img{
+            width: 100px;
+        }
+        .slide_desktop{
+            display: none;
+        }
+        .slide_responsive{
+            display: block;
+        }
+    }
+
+    /* responsive ipad */
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .slide_responsive{
+            display: none;
+        }
+        .slide_desktop{
+            display: block;
+        }
+        .header{
+            padding: 0px 40px;
+        }
+        .menu{
+            font-size: 15px;
+        }
+        .menu>span{
+            /*padding: 0px 15px;*/
+
+        }
+        .menu_item{
+            margin: 0px 15px;
+        }
+        .slide{
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+        .s1{
+            background-position: -700px ;
+        }
+        .s2{
+            background-position: -800px ;
+        }
+        .s3{
+            background-position: -850px ;
+        }
+        .s4>.slide_text>.secondary_slide{
+            font-size: 39px;
+        }
+        .s4{
+            background-position: -870px ;
+        }
+        .value_items{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .center_item{
+            margin: 0px;
+        }
+        .item_detail{
+            font-size: 20px;
+            padding: 0px 10px;
+        }
+        .video_section{
+            margin: 100px 0px;
+            flex-direction: column-reverse;
+
+        }
+        .video_text{
+            padding: 0px 20px;
+        }
+        #new_hero_section{
+            padding: 0px 35px;
+        }
+        .rigth_side{
+            margin-top: 20px;
+        }
+        .button_video{
+            text-align: center;
+        }
+        #form{
+            background-color: #F1F2F2;
+            height: 600px;
+        }
+
+    }
+
+</style>
+<body>
+    <div class="header_fixed" style="position: fixed; top:0; background-color:white; z-index:100; width:100%">
+        <div class="header">
+            <div class="logo">
+                <img src="logo_header.png" width="150px">
+            </div>
+            <div class="menu">
+                <!-- <span class="menu_first"><span class="menu_item" id="init">Inicio</span><span class="separator_menu">|</span></span>  -->
+                <span id="menu_value_hero"><span class="menu_item" id="value_hero">Valores de nuestros Héroes</span><span class="separator_menu">|</span></span>
+                <span id="menu_new_hero"><span class="menu_item" id="new_hero">Nuevo Héroe 2021</span><span class="separator_menu">|</span></span>
+                <span id="menu_form_hero"><span class="menu_item form_hero" style="margin-right: 0px;">Postula a tu Héroe</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="slides" style="">
+        <div class="slide s1">
+            <div class="slide_text">
+                <div class="title_item">
+                    <div style="margin-bottom:10px"><span class="color_a word_color">HAGAMOS</span><span class="color_c word_color" style="margin-left:7px">VISIBLES</span></div>
+                    <div style="margin-bottom:10px"><span class="color_d word_color" style="letter-spacing: 3px;">A HÉROES</span><span class="color_a word_color" style="margin-left:7px">INVISIBLES</span></div> 
+                </div>
+                <div class="left_sub_title">
+                    <div class="sub_title_item">
+                        <span>Buscamos a esas personas que dan todo por la</span>
+                        <span>comunidad sin esperar nada a cambio.</span>
+                    </div>
+                </div>
+                <div class="new_btn">
+                    <img src="btn_complement_left.png" alt="" class="btn_complement">
+                    <div class="button_section">
+                        <span>POSTULA A TU HÉROE AQUÍ</span>
+                    </div>
+                    <img src="btn_complement_right.png" alt="" class="btn_complement">
+                </div>
+            </div>
+            </div>
+        <div class="slide s2">
+            <div class="slide_text">
+                <div class="title_item secondary_slide">
+                    <div style="margin-bottom:10px"><span class="color_a word_color">Sofía, la vecina</span></div>
+                    <div style="margin-bottom:10px"><span class="color_d word_color" style="letter-spacing: 3px;">que ayuda</span><span class="color_c word_color" style="margin-left:7px">a adultos</span></div> 
+                    <div style="margin-bottom:10px"><span class="color_a word_color">mayores postrados.</span></div>
+                </div>
+                <div class="secondary_sub_title">
+                    <div class="sub_title_item">
+                        <span>Finalista Nuevos Héroes 2017</span>
+                    </div>
+                </div>
+                <div class="new_btn">
+                    <img src="btn_complement_left.png" alt="" class="btn_complement">
+                    <div class="button_section">
+                        <span>POSTULA A TU HÉROE AQUÍ</span>
+                    </div>
+                    <img src="btn_complement_right.png" alt="" class="btn_complement">
+                </div>
+            </div>
+        </div>
+        <div class="slide s3">
+            <div class="slide_text">
+                <div class="title_item secondary_slide">
+                    <div style="margin-bottom:10px"><span class="color_a word_color">Cicilia, la profesora</span></div>
+                    <div style="margin-bottom:10px"><span class="color_c word_color" style="letter-spacing: 3px;">que cabalga 8 hrs</span></div> 
+                    <div style="margin-bottom:10px"><span class="color_a word_color">para</span><span class="color_d word_color" style="margin-left:7px">dar clases.</span></div>
+                </div>
+                <div class="secondary_sub_title">
+                    <div class="sub_title_item">
+                        <span>Ganadora Nuevos Héroes 2020</span>
+                    </div>
+                </div>
+                <div class="new_btn">
+                    <img src="btn_complement_left.png" alt="" class="btn_complement">
+                    <div class="button_section">
+                        <span>POSTULA A TU HÉROE AQUÍ</span>
+                    </div>
+                    <img src="btn_complement_right.png" alt="" class="btn_complement">
+                </div>
+            </div>
+        </div>
+        <div class="slide s4">
+            <div class="slide_text">
+                <div class="title_item secondary_slide slide_desktop" >
+                    <div style="margin-bottom:10px"><span class="color_a word_color">Ciro, recicla</span></div>
+                    <div style="margin-bottom:10px"><span class="color_c word_color" style="letter-spacing: 3px;">ropa </span><span class="color_d word_color" style="margin-left:7px">y recolecta</span></div> 
+                    <div style="margin-bottom:10px"><span class="color_a word_color">colchones </span><span class="color_c word_color" style="margin-left:7px">para migrantes.</span></div>
+                </div>
+                <div class="title_item secondary_slide slide_responsive">
+                    <div style="margin-bottom:10px"><span class="color_a word_color">Ciro, recicla ropa</span></div>
+                    <div style="margin-bottom:10px"><span class="color_c word_color" style="letter-spacing: 3px;">y recolecta </span><span class="color_d word_color" style="margin-left:7px">colchones</span></div> 
+                    <div style="margin-bottom:10px"><span class="color_a word_color">para </span><span class="color_c word_color" style="margin-left:7px">migrantes.</span></div>
+                </div>
+                <div class="secondary_sub_title">
+                    <div class="sub_title_item">
+                        <span>Finalista Nuevos Héroes 2018</span>
+                    </div>
+                </div>
+                <div class="new_btn">
+                    <img src="btn_complement_left.png" alt="" class="btn_complement">
+                    <div class="button_section">
+                        <span>POSTULA A TU HÉROE AQUÍ</span>
+                    </div>
+                    <img src="btn_complement_right.png" alt="" class="btn_complement">
+                </div>
+            </div>
+        </div>
+        <div class="slide_menu">
+            <label id="0" style="background-color:#252C35 "></label>
+            <label id="1"></label>
+            <label id="2"></label>
+            <label id="3"></label>
+        </div>
+    </div>
+    <!-- value section -->
+    <div class="value_section_wrapper" style="">
+        <div class="section" style="max-width: 1650px;margin: auto;">
+            <div class="value_section">
+                <div class="value_title">Qué valores deben tener nuestros nuevos héroes</div>
+                <div class="value_items">
+                    <div class="value_item">
+                        <div class="item_title">
+                            <span style="display: inline-block;text-transform:uppercase" class="color_c word_color">Ayudan</span>
+                        </div>
+                        <div class="item_detail">
+                            <span>Nobles y preocupados por el bienestar común</span>
+                            <span>no esperan nada a cambio para</span>
+                            <span>ayudar a otros.</span>
+                        </div>
+                    </div>
+                    <div class="value_item center_item">
+                        <div class="item_title">
+                            <span style="display: inline-block;text-transform:uppercase" class="color_d word_color">Inspiran</span>
+                        </div>
+                        <div class="item_detail">
+                            <span>Todos los días construyen una</span>
+                            <span>comunidad más amable, acogedora y</span>
+                            <span>solidaria.</span>
+                        </div>
+                    </div>
+                    <div class="value_item">
+                        <div class="item_title">
+                            <span style="display: inline-block;text-transform:uppercase" class="color_c word_color">Apoyan</span>
+                        </div>
+                        <div class="item_detail">
+                            <span>Entregan esperanza y buscan seguir</span>
+                            <span>creando un mejor entorno para los más</span>
+                            <span>vulnerables.</span>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- value section -->
+<div class="value_section_wrapper " style="background-color:white">
+    <div class="section" style="max-width: 1650px;margin: auto;">
+        <div class="value_section">
+            <div class="value_title" >
+                <div style="color:black;font-family:gobold-light;letter-spacing: 2px;">conoce sus historias y hagamos</div>
+                <div style="color:black;font-family:gobold-light;letter-spacing: 2px;">visible a héroes invisibles</div>
+            </div>
+            <div class="value_items">
+                <div class="finalist"></div>
+                <div class="finalist"></div>
+                <div class="finalist"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 
+    <div class="form_wrapper" style="overflow: hidden;background-color: #F1F2F2;">
+            <div 
+                data-tf-widget="MU812Cxa" style=""
+                data-tf-hide-headers
+                data-tf-hide-footer
+                data-tf-opacity="0"
+                data-tf-inline-on-mobile
+                id="form"
+            >
+            </div>
+            <script src="//embed.typeform.com/next/embed.js"></script>
+    </div> -->
+
+    <!-- footer section -->
+    <div class="footer_wrapper">
+        <div class="footer">
+            <div class="footer_header">
+                <div class="footer_left_side">
+                    <img src="logo_footer.png" width="200px" id="icon_heroes" style="cursor: pointer;">
+                </div>
+                <div class="footer_center">
+                    <a id="downloadLink" href="bases_2021.pdf" target="_blank" download="bases_2021.pdf" style="color: white; text-decoration:none; font-family:gobold-light " >BASES LEGALES</a>
+                </div>
+                <div class="footer_right_side">
+                    <!-- <a href=""></a><i class="fa fa-twitter" style="margin-right:20px"></i></a> -->
+                    <a href="http://www.instagram.com/cajalosheroes/" target="_blank"><i class="fa fa-instagram" style="margin-right:20px"></i></a>
+                    <a href="http://www.facebook.com/LosHeroesCajadeCompensacion/" target="_blank"><i class="fa fa-facebook" style="margin-right:20px"></i></a>
+                    <a href="http://www.linkedin.com/company/caja-de-compensaci-n-los-h-roes/" target="_blank"><i class="fa fa-linkedin" style="margin-right:20px"></i></a>
+                    <a href="http://www.youtube.com/user/CajaLosHeroes" target="_blank"><i class="fa fa-youtube" style="margin-right:0px"></i></a>
+                </div>
+            </div>
+            <!-- <div class="footer_details" style="text-align: justify;text-justify: inter-word;margin-top:50px; display:none">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, voluptatum, suscipit ut temporibus sunt harum vero aliquid laborum quis nemo ratione eveniet consectetur. Ipsam, suscipit ipsa explicabo enim ullam aliquam doloremque eligendi magni at facilis blanditiis ratione non id laborum deserunt, sunt, iste nisi modi quis. Porro reiciendis debitis eos, unde dolor nisi perspiciatis recusandae, laudantium adipisci eaque at quidem inventore repellat esse voluptates. In nostrum dignissimos eveniet optio, modi cupiditate debitis veniam ut similique corrupti. Temporibus, magni voluptates eum labore minus necessitatibus! Nostrum, necessitatibus! Adipisci, quas. Dolores officiis corporis, ad sapiente nihil magni, repellat facere tempore sequi pariatur, blanditiis dolorem numquam accusamus minima officia? Voluptas illum nesciunt doloribus quasi deleniti numquam ipsum sequi sed est, quod amet corrupti doloremque adipisci exercitationem omnis vitae eaque at sint. Eaque aspernatur neque quidem repellendus, perferendis, officia atque ipsum mollitia ullam nulla possimus. Reiciendis vel repellendus aspernatur quaerat voluptates debitis tempore distinctio eum illo fugit praesentium optio, rem in accusamus quam inventore sapiente eligendi sint totam perferendis amet modi soluta! Reiciendis pariatur iste autem, dignissimos tempora vitae tenetur doloribus necessitatibus sapiente repellendus earum nemo reprehenderit alias quos. Unde praesentium recusandae quibusdam eos amet dolorum quod molestiae eius labore deleniti, dicta itaque architecto alias.
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var index=0;
+    setInterval(()=>{
+        $('.slide_menu>label').eq(index).click();
+        index++;
+        if(index>3){
+            index=0;
+        }
+    },5000);
+    //menu handler
+    $('#menu_value_hero').on('click',()=>{$(document).scrollTop(650);});
+    $('#menu_new_hero').on('click',()=>{$(document).scrollTop(1400);});
+    $('#menu_form_hero').on('click',()=>{$(document).scrollTop(2200);});
+
+    $('.form_hero,.button_section,.button_hero').on('click',()=>{$(document).scrollTop(2200);});
+    $('#icon_heroes').on('click',()=>{ location.href = "http://www.losheroes.cl";});
+    
+    //slide handler
+    $('.slide_menu>label').click((e)=>{
+        //clean all menu items
+        $('.slide_menu>label').css('background-color','white');
+        //$('.slide_menu>label').css('border-color','white');
+
+        // asign new state to menu items
+        $('.slide_menu>label').eq(e.target.id).css('background-color','#252C35');
+        $('.slide_menu>label').eq(e.target.id).css('border-color','#252C35');
+
+        // transition between slides
+        //$('.slide').hide();
+        //$('.slide').eq(e.target.id).fadeIn();
+
+        console.log(e.target.id)
+        $('.slide').css('opacity','0');
+        $('.slide').eq(e.target.id).css('opacity','1');
+
+    })
+</script>
